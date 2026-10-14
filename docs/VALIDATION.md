@@ -9,7 +9,7 @@ RepoPrism 0.2.0, validated on 2026-10-14, Asia/Shanghai, in the Windows workspac
 - `npm run test:e2e`: 16 production-browser scenarios cover the original demo/import/export/offline/subpath workflows plus alias imports, cancellation with a queued stale reply, exact preview/export equality, disclosed budget omissions, checkbox scroll/focus preservation, keyboard folder navigation and cache isolation between installations.
 - Actual desktop, graph and mobile screenshots are generated into `docs/images/` by the browser suite and were visually inspected.
 
-Browser validation uses the installed Microsoft Edge through Playwright. The configured GitHub workflow also runs core tests on Windows and Linux and production browser tests on Linux. That remote workflow has not run before repository publication.
+Local browser validation uses the installed Microsoft Edge through Playwright. After publication, [GitHub Actions run 38541488791](https://github.com/CITYSTARFINE/repoprism/actions/runs/38541488791) succeeded for the initial source commit: core tests on Ubuntu and Windows, plus production Chromium browser tests on Ubuntu.
 
 ## Public source fixture
 
@@ -42,7 +42,7 @@ Small synthetic files and one public repository do not establish performance for
 ## Remaining verification limits
 
 - No remote GitHub Pages deployment has been performed or verified yet.
-- Upload is pending the user's explicit confirmation and target-repository details; no repository creation, push or external publication has been performed.
+- The owner approved creation of the public `CITYSTARFINE/repoprism` repository and source upload; the repository commit was verified remotely.
 - No adoption, retention or Star-growth data has been collected.
 - Static import correctness and credential detection are intentionally incomplete; boundaries are documented in the README.
 - Exact model tokenizers, nested Git ignore semantics and non-JS/TS/Python import graphs are not implemented.

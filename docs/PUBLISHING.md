@@ -1,6 +1,6 @@
 # Publish RepoPrism
 
-This checkout is ready for a GitHub repository. It has not been pushed or deployed automatically; no repository URL is configured.
+Source repository: [CITYSTARFINE/repoprism](https://github.com/CITYSTARFINE/repoprism). The public repository was created and the source pushed with the owner's explicit approval. GitHub Pages is not deployed automatically.
 
 ## Local preview
 
@@ -13,7 +13,7 @@ For the production build, use `npm run build` and `npm run preview`. `dist/` is 
 
 ## GitHub repository
 
-Suggested name: `repoprism` (verify availability in your own account).
+Repository: `CITYSTARFINE/repoprism` (public).
 
 Description:
 

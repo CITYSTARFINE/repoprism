@@ -6,6 +6,8 @@
 
 [English](README.md) · [选题研究](docs/RESEARCH.zh-CN.md) · [发布说明](docs/PUBLISHING.md) · [参与贡献](CONTRIBUTING.md)
 
+[下载 v0.2.0](https://github.com/CITYSTARFINE/repoprism/releases/tag/v0.2.0) · [自动测试](https://github.com/CITYSTARFINE/repoprism/actions/workflows/check.yml)
+
 ![RepoPrism 实际界面，展示演示仓库](docs/images/workspace.png)
 
 接手一个陌生仓库，或者准备让 AI 帮你修改代码，第一步往往是：找到相关文件。RepoPrism 让你先看清结构和导入关系，再挑选代码，导出聚焦的上下文。
@@ -24,7 +26,7 @@
 
 ## 本地运行
 
-**只想试用？** 下载发布文件 `repoprism-portable-v0.2.0.html`，双击打开即可。程序、样式和分析线程都内嵌在一个文件中，不需要安装、服务器或网络。独立版已在 Chromium / Edge 验证；浏览器若限制本地文件，请使用托管版本。
+**只想试用？** [下载独立 HTML](https://github.com/CITYSTARFINE/repoprism/releases/download/v0.2.0/repoprism-portable-v0.2.0.html)，双击打开即可。程序、样式和分析线程都内嵌在一个文件中，不需要安装、服务器或网络。独立版已在 Chromium / Edge 验证；浏览器若限制本地文件，请使用托管版本。
 
 如果要开发源码：
 

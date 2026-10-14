@@ -2,6 +2,7 @@
 <h1 align="center">RepoPrism</h1>
 <p align="center"><strong>See your code. Shape your context.</strong><br>Explore a repository visually, then take just the code your AI task needs.</p>
 <p align="center">Local analysis · Interactive maps · Focused context · No API keys</p>
+<p align="center"><a href="https://github.com/CITYSTARFINE/repoprism/releases/tag/v0.2.0">Download v0.2.0</a> · <a href="https://github.com/CITYSTARFINE/repoprism/actions/workflows/check.yml">CI checks</a></p>
 <p align="center"><a href="README.zh-CN.md">简体中文</a> · <a href="#quick-start">Quick start</a> · <a href="#cli">CLI</a> · <a href="docs/RESEARCH.zh-CN.md">Research & positioning</a> · <a href="CONTRIBUTING.md">Contribute</a></p>
 
 ![Actual RepoPrism workspace, showing illustrative demo files](docs/images/workspace.png)
@@ -24,7 +25,7 @@ English and Simplified Chinese interfaces are included. The initial project is e
 
 ## Quick start
 
-**Just want to try it?** Download `repoprism-portable-v0.2.0.html` from the release, then double-click it. The entire app, including its analysis worker, is embedded. No installation, server or network is needed. The portable workflow is verified in Chromium/Edge; use the hosted build if your browser restricts local files.
+**Just want to try it?** [Download the portable HTML](https://github.com/CITYSTARFINE/repoprism/releases/download/v0.2.0/repoprism-portable-v0.2.0.html), then double-click it. The entire app, including its analysis worker, is embedded. No installation, server or network is needed. The portable workflow is verified in Chromium/Edge; use the hosted build if your browser restricts local files.
 
 For development:
 
