@@ -1,0 +1,34 @@
+{
+  "name": "repoprism",
+  "version": "0.2.0",
+  "description": "Explore a repository visually. Build focused, redacted AI context locally.",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build && node scripts/build-offline.js && node scripts/build-portable.js",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test tests/*.test.js",
+    "test:e2e": "playwright test",
+    "analyze": "node bin/repoprism.js",
+    "package": "node scripts/package-release.js",
+    "check": "node scripts/check.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@babel/parser": "^7.29.9",
+    "fflate": "^0.8.2",
+    "jsonc-parser": "^3.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "esbuild": "^0.28.2",
+    "prettier": "^3.9.10",
+    "vite": "^7.1.0"
+  }
+}

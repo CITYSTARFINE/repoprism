@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.local/
+test-results/
+playwright-report/
+package-lock.json
+docs/research-snapshot.json
+THIRD_PARTY_NOTICES.md
+examples/

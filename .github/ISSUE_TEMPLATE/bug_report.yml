@@ -1,0 +1,27 @@
+name: Reproducible bug
+description: A file import, graph, filter, context or interface failure
+body:
+  - type: markdown
+    attributes:
+      value: Please use a minimal public example. Do not attach credentials, private source, or private context exports.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What failed?
+      description: Describe the action and what you expected to happen.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Include a small source snippet or public fixture, input method (folder/ZIP/CLI), and steps.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: RepoPrism version, browser or Node version, operating system.
+    validations:
+      required: true

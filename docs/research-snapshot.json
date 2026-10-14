@@ -1,0 +1,142 @@
+{
+  "observed_client_date": "2026-10-13",
+  "source": "GitHub public REST API, live retrieval; counts are point-in-time, not predictions",
+  "repositories": [
+    {
+      "full_name": "excalidraw/excalidraw",
+      "html_url": "https://github.com/excalidraw/excalidraw",
+      "description": "Virtual whiteboard for sketching hand-drawn like diagrams",
+      "stargazers_count": 133791,
+      "forks_count": 15661,
+      "open_issues_count": 3277,
+      "created_at": "2020-01-02T01:04:43Z",
+      "pushed_at": "2026-10-13T15:07:27Z",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      }
+    },
+    {
+      "full_name": "immich-app/immich",
+      "html_url": "https://github.com/immich-app/immich",
+      "description": "High performance self-hosted photo and video management solution.",
+      "stargazers_count": 116151,
+      "forks_count": 7210,
+      "open_issues_count": 725,
+      "created_at": "2022-02-03T15:56:27Z",
+      "pushed_at": "2026-10-13T15:49:30Z",
+      "license": {
+        "key": "agpl-3.0",
+        "name": "GNU Affero General Public License v3.0",
+        "spdx_id": "AGPL-3.0",
+        "url": "https://api.github.com/licenses/agpl-3.0",
+        "node_id": "MDc6TGljZW5zZTE="
+      }
+    },
+    {
+      "full_name": "localsend/localsend",
+      "html_url": "https://github.com/localsend/localsend",
+      "description": "An open-source cross-platform alternative to AirDrop",
+      "stargazers_count": 94241,
+      "forks_count": 5267,
+      "open_issues_count": 1019,
+      "created_at": "2022-12-16T00:46:07Z",
+      "pushed_at": "2026-10-10T01:13:49Z",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      }
+    },
+    {
+      "full_name": "yamadashy/repomix",
+      "html_url": "https://github.com/yamadashy/repomix",
+      "description": "📦 Repomix is a powerful tool that packs your entire repository into a single, AI-friendly file. Perfect for when you need to feed your codebase to Large Language Models (LLMs) or other AI tools like Claude, ChatGPT, DeepSeek, Perplexity, Gemini, Gemma, Llama, Grok, and more.",
+      "stargazers_count": 28819,
+      "forks_count": 1584,
+      "open_issues_count": 153,
+      "created_at": "2024-07-13T07:11:32Z",
+      "pushed_at": "2026-10-11T16:00:19Z",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      }
+    },
+    {
+      "full_name": "mermaid-js/mermaid",
+      "html_url": "https://github.com/mermaid-js/mermaid",
+      "description": "Generation of diagrams like flowcharts or sequence diagrams from text in a similar manner as markdown",
+      "stargazers_count": 90642,
+      "forks_count": 9346,
+      "open_issues_count": 1877,
+      "created_at": "2014-11-01T23:52:32Z",
+      "pushed_at": "2026-10-13T09:03:44Z",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      }
+    },
+    {
+      "full_name": "abi/screenshot-to-code",
+      "html_url": "https://github.com/abi/screenshot-to-code",
+      "description": "Drop in a screenshot and convert it to clean code (HTML/Tailwind/React/Vue)",
+      "stargazers_count": 80311,
+      "forks_count": 9809,
+      "open_issues_count": 146,
+      "created_at": "2023-11-14T17:53:32Z",
+      "pushed_at": "2026-10-09T20:02:05Z",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      }
+    },
+    {
+      "full_name": "coderamp-labs/gitingest",
+      "html_url": "https://github.com/coderamp-labs/gitingest",
+      "description": "Replace 'hub' with 'ingest' in any GitHub URL to get a prompt-friendly extract of a codebase ",
+      "stargazers_count": 15909,
+      "forks_count": 1186,
+      "open_issues_count": 21,
+      "created_at": "2024-11-29T08:27:18Z",
+      "pushed_at": "2026-10-13T01:21:56Z",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      }
+    },
+    {
+      "full_name": "mufeedvh/code2prompt",
+      "html_url": "https://github.com/mufeedvh/code2prompt",
+      "description": "A CLI tool to convert your codebase into a single LLM prompt with source tree, prompt templating, and token counting.",
+      "stargazers_count": 7724,
+      "forks_count": 455,
+      "open_issues_count": 17,
+      "created_at": "2024-03-09T12:42:06Z",
+      "pushed_at": "2026-09-25T18:24:47Z",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+name: Workflow improvement
+description: A concrete repository task that RepoPrism does not handle well
+body:
+  - type: textarea
+    id: workflow
+    attributes:
+      label: What are you trying to do?
+      description: Describe the repository task and current workaround.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired result
+      description: Show an input and useful output. Mention related tools where helpful.
+    validations:
+      required: true

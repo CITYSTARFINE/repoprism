@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "observedClientDate": "2026-10-14",
+  "fixture": {
+    "repository": "101arrowz/fflate",
+    "files": 132,
+    "lines": 13192,
+    "links": 11,
+    "skipped": 2,
+    "selected": 34,
+    "tokens": 7976,
+    "excludedByBudget": 63,
+    "elapsedMs": 139,
+    "parseDiagnostics": 0
+  },
+  "scale": {
+    "files": 5000,
+    "analysisMs": 80,
+    "suggestionMs": 8,
+    "selected": 189,
+    "tokens": 7990
+  }
+}

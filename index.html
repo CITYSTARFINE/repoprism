@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0c1017" />
+    <meta
+      name="description"
+      content="Turn a codebase into a map. Explore dependencies and build focused AI context, entirely on your device."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>RepoPrism — See your code. Shape your context.</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./"
+        ><svg viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16 3 29 26H3Z" fill="none" stroke="currentColor" stroke-width="2" />
+          <path
+            d="m16 3 0 23M3 26l13-9 13 9"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          /></svg
+        ><strong>Repo<span>Prism</span></strong
+        ><span class="version">LOCAL / v0.2</span></a
+      >
+      <div class="top-actions">
+        <span class="privacy"><i></i><span data-i18n="private">Your code stays here</span></span
+        ><button id="lang" class="button ghost" aria-label="切换到中文">中文</button
+        ><a href="#how-it-works" class="button ghost" data-i18n="source">How it works ↗</a>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">
+            <span class="spark">✳</span
+            ><span data-i18n="eyebrow">THE CODEBASE, WITH THE LIGHTS ON</span>
+          </div>
+          <h1 data-i18n="headline">See your code.<br /><span>Shape your context.</span></h1>
+          <p class="hero-copy" data-i18n="subhead">
+            From unfamiliar repository to focused AI context.<br />One map. No uploads. No API keys.
+          </p>
+        </div>
+        <div class="import-panel" id="dropzone">
+          <span class="import-icon" aria-hidden="true">↳</span>
+          <h2 data-i18n="importTitle">Bring your own codebase</h2>
+          <p data-i18n="importCopy">Drop a repository ZIP here, or open a local folder.</p>
+          <div class="import-actions">
+            <button id="open-folder" class="button primary" data-i18n="openFolder">
+              Open folder</button
+            ><button id="open-zip" class="button secondary" data-i18n="openZip">Import ZIP</button>
+          </div>
+          <button id="demo" class="demo-link">
+            <span data-i18n="tryDemo">Or explore the interactive demo</span> <span>→</span></button
+          ><input id="folder-input" type="file" webkitdirectory multiple hidden /><input
+            id="zip-input"
+            type="file"
+            accept=".zip,application/zip"
+            hidden
+          />
+        </div>
+      </section>
+      <div id="notice" class="notice" role="status" aria-live="polite" hidden>
+        <span id="notice-message"></span
+        ><button id="cancel-import" class="button secondary" data-i18n="cancelImport" hidden>
+          Cancel import
+        </button>
+      </div>
+      <section class="workspace" aria-label="Repository explorer">
+        <div class="workspace-head">
+          <div class="repo-title">
+            <span class="repo-icon">◇</span>
+            <div>
+              <h2 id="repo-name">prism-demo</h2>
+              <span id="repo-meta">Illustrative repository · stored in memory only</span>
+            </div>
+          </div>
+          <div class="repo-actions">
+            <button id="export-map" class="button secondary" data-i18n="exportMap">↓ Map SVG</button
+            ><button id="export-report" class="button secondary" data-i18n="exportReport">
+              ↓ Report
+            </button>
+          </div>
+        </div>
+        <div class="stats">
+          <div><span data-i18n="files">FILES</span><strong id="stat-files">—</strong></div>
+          <div><span data-i18n="lines">TEXT LINES</span><strong id="stat-lines">—</strong></div>
+          <div>
+            <span data-i18n="languages">LANGUAGES</span><strong id="stat-languages">—</strong>
+          </div>
+          <div>
+            <span data-i18n="links">LOCAL IMPORT LINKS</span><strong id="stat-links">—</strong>
+          </div>
+          <div>
+            <span data-i18n="estimate">EST. TOKENS</span><strong id="stat-tokens">—</strong>
+          </div>
+        </div>
+        <div class="explorer-grid">
+          <aside class="file-panel">
+            <div class="panel-label">
+              <span data-i18n="explorer">EXPLORER</span
+              ><button id="clear-filter" class="icon-button" title="Clear filters">↺</button>
+            </div>
+            <label class="search"
+              ><span aria-hidden="true">⌕</span
+              ><input id="search" placeholder="Find a file…" aria-label="Search files"
+            /></label>
+            <div id="file-list" class="file-list" role="list" aria-label="Files"></div>
+            <div class="file-panel-footer" id="file-count"></div>
+          </aside>
+          <div class="map-panel">
+            <div class="map-toolbar">
+              <div class="view-tabs" role="group" aria-label="Visualization">
+                <button id="view-map" class="active" aria-pressed="true" data-i18n="mapTab">
+                  Code map</button
+                ><button id="view-graph" aria-pressed="false" data-i18n="graphTab">
+                  Import graph
+                </button>
+              </div>
+              <label class="color-control"
+                ><span data-i18n="colorBy">Color</span
+                ><select id="color-mode" aria-label="Map color">
+                  <option value="language">Language</option>
+                  <option value="tokens">Context size</option>
+                  <option value="risk">Review signals</option>
+                </select></label
+              >
+            </div>
+            <div class="map-breadcrumb" id="breadcrumb"></div>
+            <div id="visualization" class="visualization"></div>
+            <div class="map-footer">
+              <div id="legend" class="legend"></div>
+              <span class="map-hint" data-i18n="mapHint">Area = file size · click to inspect</span>
+            </div>
+          </div>
+          <aside class="inspector">
+            <div class="panel-label">
+              <span data-i18n="inspector">FILE INSPECTOR</span><span class="tiny-dot"></span>
+            </div>
+            <div id="file-detail" class="file-detail"></div>
+          </aside>
+        </div>
+        <div class="lower-grid">
+          <section class="signals-panel">
+            <div class="section-heading">
+              <div>
+                <span class="eyebrow" data-i18n="reviewEyebrow">KNOW WHAT TO LOOK AT</span>
+                <h2 data-i18n="signalsTitle">Review signals</h2>
+              </div>
+              <span id="signal-count" class="badge"></span>
+            </div>
+            <p class="section-copy" data-i18n="signalsCopy">
+              Heuristics for human review. Not a security audit.
+            </p>
+            <div id="signals" class="signals"></div>
+          </section>
+          <section class="context-panel">
+            <div class="section-heading">
+              <div>
+                <span class="eyebrow" data-i18n="contextEyebrow">LESS NOISE. MORE SIGNAL.</span>
+                <h2 data-i18n="contextTitle">Build your AI context</h2>
+              </div>
+              <span class="badge green" data-i18n="redacted">Redaction on</span>
+            </div>
+            <label class="task-label" for="task" data-i18n="taskLabel"
+              >What are you working on?</label
+            ><textarea
+              id="task"
+              rows="2"
+              placeholder="e.g. Understand authentication and fix session expiry"
+            ></textarea>
+            <div class="context-controls">
+              <label
+                ><span data-i18n="budget">Approx. token budget</span
+                ><select id="budget">
+                  <option value="4000">4,000</option>
+                  <option value="8000" selected>8,000</option>
+                  <option value="16000">16,000</option>
+                  <option value="32000">32,000</option>
+                  <option value="64000">64,000</option>
+                </select></label
+              ><button id="auto-select" class="button secondary" data-i18n="suggest">
+                Suggest files
+              </button>
+            </div>
+            <div class="budget-label">
+              <span id="budget-used"></span><span id="selection-count"></span>
+            </div>
+            <div class="budget-track"><div id="budget-fill"></div></div>
+            <div id="selection-list" class="selection-list"></div>
+            <div id="recommendation-note" class="recommendation-note" role="status"></div>
+            <div class="context-actions">
+              <button id="preview-context" class="button secondary" data-i18n="preview">
+                Preview context</button
+              ><button id="copy-context" class="button primary" data-i18n="copy">
+                Copy context</button
+              ><button id="download-context" class="button secondary" data-i18n="download">
+                ↓ Markdown</button
+              ><button id="clear-selection" class="button ghost" data-i18n="clear">Clear</button>
+            </div>
+            <p class="fine-print" id="context-warning" data-i18n="tokenNote">
+              Token estimates use a character heuristic, not a model tokenizer. Inspect exports
+              before sharing.
+            </p>
+          </section>
+        </div>
+      </section>
+      <section id="how-it-works" class="how-it-works">
+        <div>
+          <span>01</span>
+          <h3 data-i18n="step1Title">Bring a repository</h3>
+          <p data-i18n="step1Copy">
+            Folder or ZIP. Dependencies, binaries, and build output are skipped.
+          </p>
+        </div>
+        <div>
+          <span>02</span>
+          <h3 data-i18n="step2Title">Follow the connections</h3>
+          <p data-i18n="step2Copy">
+            Explore the map. Trace supported local imports. Find code worth reviewing.
+          </p>
+        </div>
+        <div>
+          <span>03</span>
+          <h3 data-i18n="step3Title">Take just what matters</h3>
+          <p data-i18n="step3Copy">
+            Select files, preview redacted source, export focused Markdown.
+          </p>
+        </div>
+      </section>
+      <footer>
+        <span>RepoPrism <span class="muted">/ See the whole. Choose the part.</span></span
+        ><span data-i18n="footer">Local analysis · No telemetry · MIT licensed</span>
+      </footer>
+    </main>
+    <dialog id="context-preview" aria-labelledby="preview-title">
+      <div class="preview-head">
+        <div>
+          <h2 id="preview-title" data-i18n="previewTitle">Review your context</h2>
+          <p id="preview-meta"></p>
+        </div>
+        <button id="close-preview" class="button secondary" data-i18n="closePreview">Close</button>
+      </div>
+      <textarea
+        id="preview-text"
+        readonly
+        spellcheck="false"
+        aria-label="Complete redacted Markdown context"
+      ></textarea>
+      <p class="fine-print" data-i18n="previewNote">
+        This is the complete text that will be copied or downloaded. Only recognized credential
+        patterns are masked.
+      </p>
+    </dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>
